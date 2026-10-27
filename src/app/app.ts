@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { StepOrder } from './components/step-order/step-order';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [StepOrder],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

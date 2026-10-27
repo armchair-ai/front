@@ -1,0 +1,14 @@
+<div
+    class="step-order-wrapper"
+    [class.dir-left]="direction() === 'left'"
+    [class.dir-right]="direction() === 'right'"
+    [style.--shadow-color]="shadowColor()"
+    [style.--shadow-offset]="shadowOffset()"
+>
+    <div
+        class="step-order-shape"
+        [style.background]="background()"
+        [style.width]="width()"
+        [style.height]="height()"
+    ></div>
+</div>
