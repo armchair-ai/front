@@ -1,35 +1,29 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core'
+import { ColorService } from '../../services/color'
 
 @Component({
-  selector: 'app-step-order',
-  standalone: true,
-  templateUrl: './step-order.html',
-  styleUrl: './step-order.scss',
+    selector: 'app-step-order',
+    standalone: true,
+    templateUrl: './step-order.html',
+    styleUrl: './step-order.scss',
 })
 export class StepOrder {
-  /**
-   * Color de fondo o degradado uniforme que cubre la figura completa.
-   * Ejemplos:
-   * - Sólido: '#1a00ff'
-   * - Degradado: 'linear-gradient(90deg, #1a00ff, #ec4899)'
-   */
-  readonly background = input<string>('#1a00ff');
+    private readonly colorService = inject(ColorService)
 
-  /**
-   * Dirección hacia donde apunta la terminación triangular ('right' | 'left')
-   */
-  readonly direction = input<'right' | 'left'>('right');
+    readonly color = input<string>('#c02626')
+    readonly direction = input<'right' | 'left'>('right')
+    readonly width = input<string>('320px')
+    readonly height = input<string>('160px')
 
-  readonly width = input<string>('320px');
-  readonly height = input<string>('160px');
+    readonly shadowColor = input<string>('#ffffff')
+    readonly shadowOffset = input<string>('1px')
 
-  /**
-   * Color de la sombra/borde sólido por debajo (ej. '#ffffff')
-   */
-  readonly shadowColor = input<string>('#ffffff');
+    readonly darkenAmount = input<number>(32)
 
-  /**
-   * Grosor de la sombra inferior sólida (ej. '1px')
-   */
-  readonly shadowOffset = input<string>('1px');
+    readonly backgroundGradient = computed(() => {
+        const base = this.color()
+        const amount = this.darkenAmount()
+        const darker = this.colorService.darker(base, amount)
+        return `linear-gradient(to right, ${base} 10%, ${darker} 100%)`
+    })
 }

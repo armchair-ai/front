@@ -1,57 +1,54 @@
 <main class="showcase-container">
   <header class="showcase-header">
-    <h1>Componente <code>step-order</code> (Figura Unificada)</h1>
+    <h1>Componente <code>step-order</code></h1>
     <p class="subtitle">
-      La figura tratada como <strong>un todo</strong>: soporta degradados uniformes continuos, punta redondeada y sombra sólida blanca superior de 1px.
+      Recibe un <strong>único color</strong> por parámetro y calcula automáticamente mediante una <strong>signal computada</strong> el degradé oscurecido hacia la punta triangular, tal como en el diseño de referencia.
     </p>
   </header>
 
-  <!-- 1. Degradado continuo uniforme de punta a punta -->
+  <!-- 1. Step One: Rojo (Punta a la derecha) -->
   <section class="preview-card dark-bg">
     <div class="preview-meta">
-      <h2>1. Degradado uniforme continuo (La figura como un todo)</h2>
-      <p>Degradado de azul a violeta que fluye uniformemente por el cuerpo y la punta, con sombra sólida blanca de 1px por debajo:</p>
+      <h2>Step One — Rojo (<code>color="#c02626"</code>)</h2>
+      <p>Degradé automático del rojo base al rojo oscuro hacia la punta triangular:</p>
     </div>
 
     <div class="canvas-area dark-canvas">
-      <app-step-order
-        background="linear-gradient(90deg, #1a00ff 0%, #8b5cf6 50%, #ec4899 100%)"
-        shadowColor="#ffffff"
-        shadowOffset="1px"
-      ></app-step-order>
+      <app-step-order color="#c02626"></app-step-order>
     </div>
   </section>
 
-  <!-- 2. Color sólido original como la imagen -->
+  <!-- 2. Step Two: Verde (Punta a la izquierda) -->
   <section class="preview-card dark-bg">
     <div class="preview-meta">
-      <h2>2. Color azul eléctrico sólido original</h2>
-      <p>Punta suavemente redondeada y línea sólida blanca inferior de 1px:</p>
+      <h2>Step Two — Verde (<code>color="#65a30d"</code>, <code>direction="left"</code>)</h2>
+      <p>Punta orientada a la izquierda con el degradé fluyendo y oscureciéndose hacia la punta:</p>
     </div>
 
     <div class="canvas-area dark-canvas">
-      <app-step-order
-        background="#1a00ff"
-        shadowColor="#ffffff"
-        shadowOffset="1px"
-      ></app-step-order>
+      <app-step-order color="#65a30d" direction="left"></app-step-order>
     </div>
   </section>
 
-  <!-- 3. Dirección invertida con degradado -->
+  <!-- 3. Los 4 pasos de la foto juntos -->
   <section class="preview-card dark-bg">
     <div class="preview-meta">
-      <h2>3. Dirección invertida con degradado continuo</h2>
-      <p>Punta hacia la izquierda con degradado reflejado:</p>
+      <h2>Los 4 colores de la infografía</h2>
+      <p>Cada uno recibe únicamente su color base (Rojo, Verde, Naranja, Azul oscuro):</p>
     </div>
 
-    <div class="canvas-area dark-canvas">
-      <app-step-order
-        direction="left"
-        background="linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #1a00ff 100%)"
-        shadowColor="#ffffff"
-        shadowOffset="1px"
-      ></app-step-order>
+    <div class="canvas-area dark-canvas row-layout">
+      <!-- 01 Rojo -->
+      <app-step-order color="#c02626" width="240px" height="120px"></app-step-order>
+      
+      <!-- 02 Verde (invertido) -->
+      <app-step-order color="#65a30d" direction="left" width="240px" height="120px"></app-step-order>
+      
+      <!-- 03 Naranja -->
+      <app-step-order color="#ea580c" width="240px" height="120px"></app-step-order>
+      
+      <!-- 04 Azul/Grisáceo oscuro (invertido) -->
+      <app-step-order color="#334155" direction="left" width="240px" height="120px"></app-step-order>
     </div>
   </section>
 </main>
