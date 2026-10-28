@@ -3,12 +3,18 @@
 }
 
 .step-order-wrapper {
+    position: relative;
     display: inline-block;
     filter: drop-shadow(0 -1px 0 #ffffff);
     transition: transform 0.3s ease;
 
     &.dir-left {
         transform: scaleX(-1);
+
+        /* Si la figura se refleja, des-reflejamos el texto para que no se lea al revés */
+        .step-order-number {
+            transform: translateY(-50%) scaleX(-1);
+        }
     }
 }
 
@@ -53,4 +59,20 @@
     );
 
     transition: background 0.3s ease;
+}
+
+/* Tipografía y posicionamiento del número sobre la base rectangular */
+.step-order-number {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    font-family: inherit;
+    letter-spacing: -0.02em;
+    user-select: none;
+    pointer-events: none;
 }

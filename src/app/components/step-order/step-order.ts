@@ -7,12 +7,12 @@ import { ColorService } from '../../services/color'
     templateUrl: './step-order.html',
     styleUrl: './step-order.scss',
 })
-
 export class StepOrder {
     private readonly colorService = inject(ColorService)
 
     readonly color = input<string>('#c02626')
     readonly direction = input<'right' | 'left'>('right')
+    readonly order = input<number>(0)
 
     readonly backgroundGradient = computed(() => {
         const base = this.color()
