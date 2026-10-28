@@ -2,6 +2,7 @@
     align-items: center;
     display: grid;
     filter: drop-shadow(-1px -1px 0 #ffffff);
+    justify-items: center;
 
     &.left {
         transform: scaleX(-1);
@@ -10,7 +11,7 @@
         .step-order-number {
             transform: scaleX(-1);
             left: initial;
-            right: -64px;
+            right: 48px;
             text-align: right;
         }
     }
@@ -60,13 +61,22 @@
 }
 
 .step-order-number {
-    color: #ffffff;
     font-size: 72px;
     font-weight: 800;
     line-height: 1;
     position: relative;
-    left: 64px;
+    left: -48px;
     z-index: 1;
+
+    /* Sombra interna (inset) desde los 4 lados: arriba, abajo, izquierda y derecha */
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 40%, transparent 80%, rgba(0, 0, 0, 0.2) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, transparent 30%, transparent 60%, rgba(0, 0, 0, 0.2) 100%),
+        #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .step-order-number,
