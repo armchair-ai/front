@@ -3,7 +3,7 @@
     align-items: center;
     position: relative;
     flex: 1;
-    height: calc(var(--step-height) - 8px);
+    height: calc(var(--step-height) - 4px);
     filter: drop-shadow(0 -1px 0 #ffffff) var(--step-shadow);
     left: calc(-1 * var(--step-gap-x));
 

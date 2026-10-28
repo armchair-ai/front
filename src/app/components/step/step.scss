@@ -1,9 +1,28 @@
 :host {
-    display: flex;
+    display: grid;
     align-items: center;
     width: 100%;
+    grid-template-columns: var(--step-order-width) 1fr;
 
+    app-step-order { 
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    app-step-description { 
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
     &.left {
-        flex-direction: row-reverse;
+        grid-template-columns: 1fr var(--step-order-width);
+        app-step-order { 
+            grid-column: 2; 
+            grid-row: 1;
+        }
+        app-step-description { 
+            grid-column: 1; 
+            grid-row: 1;
+        }
     }
 }

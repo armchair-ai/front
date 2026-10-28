@@ -19,7 +19,7 @@
 
 .step-order-shape {
     display: block;
-    width: 160px;
+    width: var(--step-order-width);
     height: var(--step-height);
 
     clip-path: polygon(
