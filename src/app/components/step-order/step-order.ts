@@ -15,9 +15,6 @@ export class StepOrder {
     readonly width = input<string>('320px')
     readonly height = input<string>('160px')
 
-    readonly shadowColor = input<string>('#ffffff')
-    readonly shadowOffset = input<string>('1px')
-
     readonly darkenAmount = input<number>(32)
 
     readonly backgroundGradient = computed(() => {

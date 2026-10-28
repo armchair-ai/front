@@ -4,7 +4,7 @@
 
 .step-order-wrapper {
     display: inline-block;
-    filter: drop-shadow(0 calc(-1 * var(--shadow-offset, 1px)) 0 var(--shadow-color, #ffffff));
+    filter: drop-shadow(0 -1px 0 #ffffff);
     transition: transform 0.3s ease;
 
     &.dir-left {
