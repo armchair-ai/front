@@ -2,10 +2,10 @@
     align-items: center;
     display: grid;
     filter: drop-shadow(-1px -1px 0 #ffffff);
-    transition: transform 0.3s ease;
 
     &.left {
         transform: scaleX(-1);
+        filter: drop-shadow(1px -1px 0 #ffffff);
 
         .step-order-number {
             transform: scaleX(-1);
