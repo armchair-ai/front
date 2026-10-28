@@ -4,11 +4,14 @@
     filter: drop-shadow(-1px -1px 0 #ffffff);
     transition: transform 0.3s ease;
 
-    &.dir-left {
+    &.left {
         transform: scaleX(-1);
 
         .step-order-number {
-            transform: translateY(-50%) scaleX(-1);
+            transform: scaleX(-1);
+            left: initial;
+            right: -64px;
+            text-align: right;
         }
     }
 }
@@ -56,10 +59,9 @@
     transition: background 0.3s ease;
 }
 
-/* Tipografía y posicionamiento del número sobre la base rectangular */
 .step-order-number {
     color: #ffffff;
-    font-size: 3.5rem;
+    font-size: 64px;
     font-weight: 800;
     line-height: 1;
     position: relative;
