@@ -8,7 +8,6 @@ import { Component, input } from '@angular/core'
 })
 export class StepDescription {
     readonly direction = input<'right' | 'left'>('right')
-    readonly background = input<string>('#ffffff')
     readonly title = input<string>('')
     readonly description = input<string>('')
 }
