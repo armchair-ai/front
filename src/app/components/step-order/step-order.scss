@@ -11,7 +11,7 @@
         .step-order-number {
             transform: scaleX(-1);
             left: initial;
-            right: 48px;
+            right: 32px;
             text-align: right;
         }
     }
@@ -19,7 +19,7 @@
 
 .step-order-shape {
     display: block;
-    width: 256px;
+    width: 192px;
     height: var(--step-height);
 
     clip-path: polygon(
@@ -61,11 +61,11 @@
 }
 
 .step-order-number {
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 800;
     line-height: 1;
     position: relative;
-    left: -48px;
+    left: -32px;
     z-index: 1;
     user-select: none;
 

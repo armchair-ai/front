@@ -14,7 +14,7 @@
         .step-description-content {
             transform: scaleX(-1);
             padding-left: 2rem;
-            padding-right: calc(102.4px + 2rem);
+            padding-right: calc(76.8px + 2rem);
         }
     }
 }
@@ -28,12 +28,12 @@
 .step-description-shape {
     width: calc(100% + var(--step-gap-x));
     height: 100%;
-    background: linear-gradient(to right, #f6f6f6 10%, #e2e2e2 100%);
+    background: linear-gradient(to right, #f6f6f6, #F1F1F1);
 
     /*
      * Muesca triangular entrante en el lateral izquierdo.
-     * Ángulo, pendiente (0.625) y radio de curvatura exactamente idénticos
-     * al triángulo saliente de step-order (profundidad de 102.4px = 40% de 256px).
+     * Ángulo, pendiente y radio de curvatura exactamente idénticos
+     * al triángulo saliente de step-order (profundidad de 76.8px = 40% de 192px).
      */
     clip-path: polygon(
         /* Esquina superior izquierda */
@@ -58,22 +58,22 @@
 
         /*
          * Muesca triangular complementaria:
-         * Replica exactamente el ángulo y el arco de punta de step-order
+         * Replica exactamente el ángulo y el arco de punta de step-order (40% de 192px)
          */
-        calc(102.4px - 11.5px) 54.5%,
-        calc(102.4px - 5.1px) 52.2%,
-        calc(102.4px - 1.3px) 50.7%,
-        102.4px 50%,
-        calc(102.4px - 1.3px) 49.3%,
-        calc(102.4px - 5.1px) 47.8%,
-        calc(102.4px - 11.5px) 45.5%
+        calc(76.8px - 8.64px) 54.5%,
+        calc(76.8px - 3.84px) 52.2%,
+        calc(76.8px - 0.96px) 50.7%,
+        76.8px 50%,
+        calc(76.8px - 0.96px) 49.3%,
+        calc(76.8px - 3.84px) 47.8%,
+        calc(76.8px - 8.64px) 45.5%
     );
 }
 
 .step-description-content {
     position: relative;
     z-index: 1;
-    padding-left: calc(102.4px + 2rem);
+    padding-left: calc(76.8px + 2rem);
     padding-right: 2rem;
     box-sizing: border-box;
 }

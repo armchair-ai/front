@@ -33,7 +33,7 @@ html {
 body {
     color-scheme: light;
     font: var(--mat-sys-body-medium);
-    background-color: var(--mat-sys-surface);
+    background: linear-gradient(to right, #eee, #b0b0b0);
     color: var(--mat-sys-on-surface);
     font: var(--mat-sys-body-medium);
 }
