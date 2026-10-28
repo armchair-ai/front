@@ -67,6 +67,7 @@
     position: relative;
     left: -48px;
     z-index: 1;
+    user-select: none;
 
     /* Sombra interna (inset) desde los 4 lados: arriba, abajo, izquierda y derecha */
     background:
