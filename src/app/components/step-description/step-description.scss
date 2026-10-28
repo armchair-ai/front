@@ -2,7 +2,6 @@
     display: grid;
     align-items: center;
     position: relative;
-    flex: 1;
     height: calc(var(--step-height) - 4px);
     filter: drop-shadow(0 -1px 0 #ffffff) var(--step-shadow);
     left: calc(-1 * var(--step-gap-x));
@@ -28,7 +27,7 @@
 .step-description-shape {
     width: calc(100% + var(--step-gap-x));
     height: 100%;
-    background: linear-gradient(to right, #f6f6f6, #F1F1F1);
+    background: var(--step-surface-color);
 
     /*
      * Muesca triangular complementaria:

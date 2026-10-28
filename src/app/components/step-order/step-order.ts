@@ -1,5 +1,5 @@
 import { Component, computed, inject, input } from '@angular/core'
-import { ColorService } from '../../services/color'
+import { StepColorService } from '../../services/step-color'
 
 @Component({
     selector: 'app-step-order',
@@ -12,15 +12,13 @@ import { ColorService } from '../../services/color'
     },
 })
 export class StepOrder {
-    private readonly colorService = inject(ColorService)
+    private readonly stepColorService = inject(StepColorService)
 
     readonly color = input<string>('#c02626')
     readonly direction = input<'right' | 'left'>('right')
     readonly order = input<number>(0)
 
-    readonly backgroundGradient = computed(() => {
-        const base = this.color()
-        const darker = this.colorService.darker(base, 32)
-        return `linear-gradient(to right, ${darker} 5%, ${base} 100%)`
-    })
+    readonly background = computed(() =>
+        this.stepColorService.background(this.color())
+    )
 }
