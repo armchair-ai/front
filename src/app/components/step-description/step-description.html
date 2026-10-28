@@ -1,0 +1,20 @@
+<div
+    class="step-description-wrapper"
+    [class.left]="direction() === 'left'"
+    [class.right]="direction() === 'right'"
+>
+    <div
+        class="step-description-shape"
+        [style.background]="background()"
+    ></div>
+
+    <div class="step-description-content">
+        @if (title()) {
+            <h3 class="step-description-title">{{ title() }}</h3>
+        }
+        @if (description()) {
+            <p class="step-description-text">{{ description() }}</p>
+        }
+        <ng-content></ng-content>
+    </div>
+</div>

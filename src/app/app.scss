@@ -93,7 +93,7 @@
 
     &.column-layout {
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     &.row-layout {
@@ -121,6 +121,39 @@
 
       p {
         color: #94a3b8;
+      }
+    }
+  }
+}
+
+.step-composite-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  gap: 1.5rem;
+
+  &.interlocked {
+    gap: 0;
+
+    &.right-oriented {
+      app-step-order {
+        z-index: 2;
+        margin-right: -102.4px;
+      }
+      app-step-description {
+        z-index: 1;
+      }
+    }
+
+    &.left-oriented {
+      app-step-description {
+        z-index: 1;
+        margin-right: -102.4px;
+      }
+      app-step-order {
+        z-index: 2;
       }
     }
   }
