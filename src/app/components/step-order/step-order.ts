@@ -6,6 +6,10 @@ import { ColorService } from '../../services/color'
     standalone: true,
     templateUrl: './step-order.html',
     styleUrl: './step-order.scss',
+    host: {
+        '[class.left]': "direction() === 'left'",
+        '[class.right]': "direction() === 'right'",
+    },
 })
 export class StepOrder {
     private readonly colorService = inject(ColorService)
