@@ -14,7 +14,7 @@
         .step-description-content {
             transform: scaleX(-1);
             padding-left: 2rem;
-            padding-right: calc(76.8px + 2rem);
+            padding-right: calc(var(--step-triangle-width) + 2rem);
         }
     }
 }
@@ -31,9 +31,8 @@
     background: linear-gradient(to right, #f6f6f6, #F1F1F1);
 
     /*
-     * Muesca triangular entrante en el lateral izquierdo.
-     * Ángulo, pendiente y radio de curvatura exactamente idénticos
-     * al triángulo saliente de step-order (profundidad de 76.8px = 40% de 192px).
+     * Muesca triangular complementaria:
+     * Idéntica al triángulo saliente de step-order (de vértice al punto medio)
      */
     clip-path: polygon(
         /* Esquina superior izquierda */
@@ -56,24 +55,15 @@
         /* Borde inferior hasta el borde izquierdo */
         0 100%,
 
-        /*
-         * Muesca triangular complementaria:
-         * Replica exactamente el ángulo y el arco de punta de step-order (40% de 192px)
-         */
-        calc(76.8px - 8.64px) 54.5%,
-        calc(76.8px - 3.84px) 52.2%,
-        calc(76.8px - 0.96px) 50.7%,
-        76.8px 50%,
-        calc(76.8px - 0.96px) 49.3%,
-        calc(76.8px - 3.84px) 47.8%,
-        calc(76.8px - 8.64px) 45.5%
+        /* De vértice inferior a punto medio y a vértice superior */
+        var(--step-triangle-width) 50%
     );
 }
 
 .step-description-content {
     position: relative;
     z-index: 1;
-    padding-left: calc(76.8px + 2rem);
+    padding-left: calc(var(--step-triangle-width) + 2rem);
     padding-right: 2rem;
     box-sizing: border-box;
 }

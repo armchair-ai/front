@@ -19,7 +19,7 @@
 
 .step-order-shape {
     display: block;
-    width: 192px;
+    width: 160px;
     height: var(--step-height);
 
     clip-path: polygon(
@@ -30,22 +30,14 @@
         11px 2px,
         16px 0,
 
-        /* Borde superior horizontal hasta el inicio del triángulo */
-        60% 0,
+        /* Borde superior hasta el inicio del triángulo */
+        calc(100% - var(--step-triangle-width)) 0,
 
-        /* Pendiente descendente hacia la punta */
-        95.5% 45.5%,
-
-        /* Curva redondeada suave en la punta derecha */
-        98% 47.8%,
-        99.5% 49.3%,
+        /* Del vértice al punto medio */
         100% 50%,
-        99.5% 50.7%,
-        98% 52.2%,
-        95.5% 54.5%,
 
-        /* Pendiente inferior hacia la base */
-        60% 100%,
+        /* Del punto medio al vértice inferior */
+        calc(100% - var(--step-triangle-width)) 100%,
 
         /* Borde inferior horizontal */
         16px 100%,
