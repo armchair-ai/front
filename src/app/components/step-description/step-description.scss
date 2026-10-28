@@ -5,12 +5,12 @@
     flex: 1;
     height: calc(var(--step-height) - 8px);
     filter: drop-shadow(0 -1px 0 #ffffff);
-    left: calc(-1 * var(--step-translate-x));
+    left: calc(-1 * var(--step-gap-x));
 
     &.left {
         transform: scaleX(-1);
         filter: drop-shadow(0 -1px 0 #ffffff);
-        left: var(--step-translate-x);
+        left: var(--step-gap-x);
 
         .step-description-content {
             transform: scaleX(-1);
@@ -27,7 +27,7 @@
 }
 
 .step-description-shape {
-    width: calc(100% + var(--step-translate-x));
+    width: calc(100% + var(--step-gap-x));
     height: 100%;
     background-color: #ffffff;
 
