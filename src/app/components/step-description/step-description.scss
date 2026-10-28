@@ -29,7 +29,7 @@
 .step-description-shape {
     width: calc(100% + var(--step-gap-x));
     height: 100%;
-    background-color: #ffffff;
+    background: linear-gradient(to right, #f6f6f6 10%, #e2e2e2 100%);
 
     /*
      * Muesca triangular entrante en el lateral izquierdo.

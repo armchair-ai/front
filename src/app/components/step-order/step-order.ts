@@ -21,6 +21,6 @@ export class StepOrder {
     readonly backgroundGradient = computed(() => {
         const base = this.color()
         const darker = this.colorService.darker(base, 32)
-        return `linear-gradient(to right, ${base} 10%, ${darker} 100%)`
+        return `linear-gradient(to right, ${darker} 5%, ${base} 100%)`
     })
 }
