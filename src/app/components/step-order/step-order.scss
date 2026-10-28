@@ -1,12 +1,12 @@
 :host {
     align-items: center;
     display: grid;
-    filter: drop-shadow(-1px -1px 0 #ffffff);
+    filter: drop-shadow(-1px -1px 0 #ffffff) var(--step-shadow);
     justify-items: center;
 
     &.left {
         transform: scaleX(-1);
-        filter: drop-shadow(1px -1px 0 #ffffff);
+        filter: drop-shadow(1px -1px 0 #ffffff) var(--step-shadow);
 
         .step-order-number {
             transform: scaleX(-1);

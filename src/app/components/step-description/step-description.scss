@@ -4,12 +4,11 @@
     position: relative;
     flex: 1;
     height: calc(var(--step-height) - 8px);
-    filter: drop-shadow(0 -1px 0 #ffffff);
+    filter: drop-shadow(0 -1px 0 #ffffff) var(--step-shadow);
     left: calc(-1 * var(--step-gap-x));
 
     &.left {
         transform: scaleX(-1);
-        filter: drop-shadow(0 -1px 0 #ffffff);
         left: var(--step-gap-x);
 
         .step-description-content {
