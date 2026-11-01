@@ -26,6 +26,8 @@ form {
     height: 60%;
     justify-self: center;
     align-self: center;
+    position: relative;
+    left: -3%;
 
     & .message-icon {
         font-size: 40px;
@@ -39,5 +41,7 @@ form {
     & textarea {
         border: 1px solid #AAA;
         border-radius: 16px;
+        resize: none;
+        padding: 16px;
     }
 }
