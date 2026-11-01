@@ -1,13 +1,13 @@
 import { Component } from '@angular/core'
-import { Message } from '../message/message'
+import { Message } from '../../components/message/message'
 
 @Component({
-    selector: 'app-messages',
+    selector: 'app-messages-page',
     standalone: true,
     imports: [Message],
     templateUrl: './messages.html',
     styleUrl: './messages.scss',
 })
-
-export class Messages {
+export class MessagesPage {
 }
+

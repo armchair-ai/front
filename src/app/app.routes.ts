@@ -1,20 +1,20 @@
 import { Routes } from '@angular/router';
-import { Messages } from './components/messages/messages';
-import { MessageSteps } from './components/message-steps/message-steps';
+import { MessagesPage } from './pages/messages/messages';
+import { MessageShow } from './pages/message-show/message-show';
 
 export const routes: Routes = [
+    {
+        path: 'messages',
+        component: MessagesPage,
+    },
+    {
+        path: 'message/:id',
+        component: MessageShow,
+    },
     {
         path: '',
         redirectTo: 'messages',
         pathMatch: 'full',
-    },
-    {
-        path: 'messages',
-        component: Messages,
-    },
-    {
-        path: 'message/:id',
-        component: MessageSteps,
     },
     {
         path: 'messages/:id',
