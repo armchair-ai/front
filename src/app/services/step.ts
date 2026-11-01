@@ -2,13 +2,7 @@ import { inject, Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { environment } from '../../environments/environment'
-
-export interface WorkflowStep {
-    id: number
-    order: number
-    name: string
-    label: string
-}
+import { Step } from '../models/step'
 
 @Injectable({
     providedIn: 'root',
@@ -20,7 +14,7 @@ export class StepService {
         ? environment.apiUrl
         : `${environment.apiUrl}/steps`
 
-    getSteps(): Observable<WorkflowStep[]> {
-        return this.http.get<WorkflowStep[]>(this.apiUrl)
+    getSteps(): Observable<Step[]> {
+        return this.http.get<Step[]>(this.apiUrl)
     }
 }

@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core'
 import { Step } from '../step/step'
-import { WorkflowStep } from '../../services/step'
+import type { Step as StepModel } from '../../models/step'
 
 @Component({
     selector: 'app-step-list',
@@ -11,5 +11,5 @@ import { WorkflowStep } from '../../services/step'
 })
 
 export class StepList {
-    readonly steps = input<WorkflowStep[]>([])
+    readonly steps = input<StepModel[]>([])
 }

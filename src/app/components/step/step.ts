@@ -20,8 +20,9 @@ import { StepIcon } from '../step-icon/step-icon'
     },
 })
 export class Step {
-    readonly color = input<string>('#c02626')
-    readonly order = input<number>(0)
+    readonly color = input.required<string>()
+    readonly order = input.required<number>()
+    readonly icon = input.required<string>()
     readonly direction = input<'right' | 'left'>('right')
     readonly disabled = input<boolean>(false)
 }
