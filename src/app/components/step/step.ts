@@ -23,5 +23,5 @@ export class Step {
     readonly color = input<string>('#c02626')
     readonly order = input<number>(0)
     readonly direction = input<'right' | 'left'>('right')
-    readonly disabled = input<boolean>(true)
+    readonly disabled = input<boolean>(false)
 }
