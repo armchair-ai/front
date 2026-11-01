@@ -27,6 +27,7 @@
         app-step-order { 
             grid-column: 3; 
             grid-row: 1;
+            transform: scaleX(-1);
         }
         app-step-description { 
             grid-column: 1 / 3; 
