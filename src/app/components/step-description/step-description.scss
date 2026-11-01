@@ -5,14 +5,15 @@
     height: calc(var(--step-height) - 4px);
     filter: drop-shadow(0 -1px 0 #ffffff) var(--step-shadow);
     left: calc(-1 * var(--step-gap-x));
+}
 
-   /*  &.left {
-        .step-description-content {
-            transform: scaleX(-1);
-            padding-left: 2rem;
-            padding-right: calc(var(--step-triangle-width) + 2rem);
-        }
-    } */
+:host-context(.left) {
+    left: var(--step-gap-x);
+    transform: scaleX(-1);
+}
+
+:host-context(.disabled) {
+    filter: none;
 }
 
 .step-description-shape,

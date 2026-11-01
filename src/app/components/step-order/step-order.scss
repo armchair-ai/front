@@ -6,12 +6,11 @@
 }
 
 :host-context(.left) {
-    .step-order-number {
-        transform: scaleX(-1);
-        left: initial;
-        right: 32px;
-        text-align: right;
-    }
+    transform: scaleX(-1);
+}
+
+:host-context(.disabled) {
+    filter: none;
 }
 
 .step-order-shape {
@@ -67,6 +66,13 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+
+    :host-context(.left) & {
+        transform: scaleX(-1);
+        left: initial;
+        right: 32px;
+        text-align: right;
+    }
 }
 
 .step-order-number,

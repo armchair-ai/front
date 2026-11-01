@@ -16,10 +16,12 @@ import { StepIcon } from '../step-icon/step-icon'
     host: {
         '[class.left]': "direction() === 'left'",
         '[class.right]': "direction() === 'right'",
+        '[class.disabled]': "disabled()",
     },
 })
 export class Step {
     readonly color = input<string>('#c02626')
     readonly order = input<number>(0)
     readonly direction = input<'right' | 'left'>('right')
+    readonly disabled = input<boolean>(true)
 }
