@@ -65,23 +65,16 @@ form {
         color: #ffffff;
         font-weight: 600;
         cursor: pointer;
-        transition: background 0.3s ease, opacity 0.2s ease;
+        transition: background 0.3s ease, opacity 0.2s ease, filter 0.2s ease;
 
-        &:hover {
+        &:hover:not(:disabled) {
             opacity: 0.9;
         }
-    }
 
-    & .message-submit {
-        background: var(--message-color);
-        border-radius: 12px;
-        color: #ffffff;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s ease, opacity 0.2s ease;
-
-        &:hover {
-            opacity: 0.9;
+        &:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+            filter: grayscale(0.4);
         }
     }
 }
