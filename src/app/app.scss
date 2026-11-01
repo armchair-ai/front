@@ -3,3 +3,12 @@
     height: 100%;
     padding: 20px;
 }
+
+router-outlet {
+    display: none;
+
+    & ~ * {
+        display: grid;
+        height: 100%;
+    }
+}

@@ -1,9 +1,8 @@
 import { Component } from '@angular/core'
-import { Step } from './components/step/step'
-import { Message } from './components/message/message'
+import { RouterOutlet } from '@angular/router'
 
 @Component({
-    imports: [Step, Message],
+    imports: [RouterOutlet],
     selector: 'app-root',
     styleUrl: './app.scss',
     templateUrl: './app.html',

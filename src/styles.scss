@@ -38,3 +38,8 @@ body {
     color: var(--mat-sys-on-surface);
     font: var(--mat-sys-body-medium);
 }
+
+router-outlet ~ * {
+    display: grid;
+    height: 100%;
+}
