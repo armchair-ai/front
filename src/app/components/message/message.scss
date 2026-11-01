@@ -7,6 +7,12 @@
 .shapes {
     pointer-events: none;
     height: 100%;
+
+    & .shape-color {
+        fill: var(--message-color);
+        transition: fill 0.3s ease;
+    }
+
     & .shape-white {
         fill: #ffffff;
         filter: drop-shadow(3px 4px 6px rgba(0, 0, 0, 0.08));
@@ -21,7 +27,7 @@
 form {
     display: grid;
     grid-template-rows: 40px 1fr 40px;
-    gap: 16px 0;
+    gap: 24px 0;
     width: 60%;
     height: 60%;
     justify-self: center;
@@ -33,7 +39,7 @@ form {
         font-size: 40px;
         width: 40px;
         height: 40px;
-        color: #334155;
+        color: var(--message-color);
         user-select: none;
         justify-self: center;
     }
@@ -43,5 +49,39 @@ form {
         border-radius: 16px;
         resize: none;
         padding: 16px;
+
+        &:focus,
+        &:focus-visible,
+        &:active {
+            outline: 2px solid var(--message-color);
+            border-color: var(--message-color);
+        }
+    }
+
+    & .message-submit {
+        background: var(--message-color);
+        border: none;
+        border-radius: 8px;
+        color: #ffffff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease, opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    & .message-submit {
+        background: var(--message-color);
+        border-radius: 12px;
+        color: #ffffff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease, opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.9;
+        }
     }
 }

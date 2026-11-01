@@ -7,6 +7,9 @@ import { MatIcon } from '@angular/material/icon'
     imports: [MatIcon],
     templateUrl: './message.html',
     styleUrl: './message.scss',
+    host: {
+        '[style.--message-color]': 'color()',
+    },
 })
 export class Message {
     readonly color = input<string>('#3b82f6')
