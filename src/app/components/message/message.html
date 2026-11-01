@@ -1,29 +1,17 @@
-<div class="message-wrapper">
-    <svg class="message-shapes" viewBox="0 0 260 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Trapecio de color (detrás) -->
-        <path
-            class="shape-color"
-            [attr.fill]="color()"
-            d="M 60 32 L 228 12 A 20 20 0 0 1 248 32 L 248 348 A 20 20 0 0 1 228 368 L 60 348 Z"
-        />
+<svg class="shapes" viewBox="0 0 260 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        class="shape-color"
+        [attr.fill]="color()"
+        d="M 60 32 L 228 12 A 20 20 0 0 1 248 32 L 248 348 A 20 20 0 0 1 228 368 L 60 348 Z"
+    />
 
-        <!-- Trapecio blanco (por encima del de color) -->
-        <path
-            class="shape-white"
-            d="M 12 32 A 20 20 0 0 1 32 12 L 208 36 A 20 20 0 0 1 228 56 L 228 324 A 20 20 0 0 1 208 344 L 32 368 A 20 20 0 0 1 12 348 L 12 32 Z"
-        />
-    </svg>
-
-    <div class="message-content">
-        <div class="message-icon-wrapper">
-            <mat-icon class="message-icon">{{ icon() }}</mat-icon>
-        </div>
-
-        <div class="message-form">
-            <textarea></textarea>
-        </div>
-
-        <button class="message-submit" [style.background]="color()">Enviar</button>
-    </div>
-</div>
-
+    <path
+        class="shape-white"
+        d="M 12 32 A 20 20 0 0 1 32 12 L 208 36 A 20 20 0 0 1 228 56 L 228 324 A 20 20 0 0 1 208 344 L 32 368 A 20 20 0 0 1 12 348 L 12 32 Z"
+    />
+</svg>
+<form>
+    <mat-icon class="message-icon">{{ icon() }}</mat-icon>
+    <textarea></textarea>
+    <button class="message-submit" [style.background]="color()">Enviar</button>
+</form>
