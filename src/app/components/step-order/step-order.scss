@@ -5,14 +5,6 @@
     justify-items: center;
 }
 
-:host-context(.left) {
-    transform: scaleX(-1);
-}
-
-:host-context(.disabled) {
-    filter: none;
-}
-
 .step-order-shape {
     display: block;
     width: var(--step-order-width);
@@ -66,8 +58,18 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+}
 
-    :host-context(.left) & {
+.step-order-number,
+.step-order-shape {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+:host-context(.left) {
+    transform: scaleX(-1);
+
+    .step-order-number {
         transform: scaleX(-1);
         left: initial;
         right: 32px;
@@ -75,8 +77,6 @@
     }
 }
 
-.step-order-number,
-.step-order-shape {
-    grid-row: 1;
-    grid-column: 1;
+:host-context(.disabled) {
+    filter: var(--step-disabled-filter);
 }

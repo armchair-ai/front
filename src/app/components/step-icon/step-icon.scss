@@ -7,6 +7,10 @@
     width: var(--step-icon-width);
 }
 
+:host-context(.disabled) {
+    filter: var(--step-disabled-filter);
+}
+
 .step-icon-circle {
     align-items: center;
     display: flex;
