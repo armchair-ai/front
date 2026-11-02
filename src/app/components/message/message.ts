@@ -1,12 +1,14 @@
 import { Component, computed, input, output, signal } from '@angular/core'
-import { form, FormField, required } from '@angular/forms/signals'
+import { FieldTree, form, FormField, FormRoot, required } from '@angular/forms/signals'
 import { MatIcon } from '@angular/material/icon'
+import { FormMessage } from '../../models/form-message'
 
 @Component({
     selector: 'app-message',
     standalone: true,
     imports: [
         FormField,
+        FormRoot,
         MatIcon
     ],
     templateUrl: './message.html',
@@ -15,32 +17,35 @@ import { MatIcon } from '@angular/material/icon'
         '[style.--message-color]': 'color()',
     },
 })
+
 export class Message {
     public readonly color = input.required<string>()
     public readonly onSubmit = output<string>()
 
-    protected readonly disabled = computed(() => !this.isValid())
-    protected readonly form = form(signal({
-        message: ''
-    }), (schema) => {
-        required(schema.message)
+    protected readonly disabled = computed(() => {
+        return !this.isValid() || this.form().submitting()
     })
 
-    public submit(event: Event): void {
-        event.preventDefault()
-        if (!this.isValid()) {
-            return
+    protected readonly form = form<FormMessage>(signal({
+        message: ''
+    }), (schemaPath) => {
+        required(schemaPath.message)
+    }, {
+        submission: {
+            action: (form: FieldTree<FormMessage>) => this.handleSubmit(form)
         }
-        this.onSubmit.emit(this.form.message().value().trim())
+    })
+
+    protected async handleSubmit(form: FieldTree<FormMessage>): Promise<void> {
+        this.onSubmit.emit(form.message().value().trim())
         this.reset()
     }
 
-    private isValid(): boolean {
+    protected isValid(): boolean {
         return this.form().valid()
     }
 
-    private reset(): void {
+    protected reset(): void {
         this.form().reset()
     }
 }
-

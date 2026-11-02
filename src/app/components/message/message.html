@@ -9,7 +9,7 @@
         d="M 12 32 A 20 20 0 0 1 32 12 L 208 36 A 20 20 0 0 1 228 56 L 228 324 A 20 20 0 0 1 208 344 L 32 368 A 20 20 0 0 1 12 348 L 12 32 Z"
     />
 </svg>
-<form (submit)="submit($event)">
+<form [formRoot]="form">
     <mat-icon class="message-icon">
         desktop_windows
     </mat-icon>
