@@ -15,6 +15,7 @@ import { FormMessage } from '../../models/form-message'
     styleUrl: './message.scss',
     host: {
         '[style.--message-color]': 'color()',
+        '[class.submitting]': 'form().submitting()',
     },
 })
 

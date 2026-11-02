@@ -2,6 +2,14 @@
     display: grid;
     justify-self: center;
     height: 100%;
+
+    &.submitting {
+        & .shape-color,
+        & .message-icon,
+        & .message-submit {
+            animation: shape-pulse 1.5s ease-in-out infinite;
+        }
+    }
 }
 
 .shapes {
@@ -71,10 +79,21 @@ form {
             opacity: 0.9;
         }
 
-        &:disabled {
+        &:disabled:not(.submitting) {
             opacity: 0.45;
             cursor: not-allowed;
             filter: grayscale(0.4);
         }
+    }
+}
+
+@keyframes shape-pulse {
+    0%, 100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 0.5;
+        filter: brightness(1.25);
     }
 }
