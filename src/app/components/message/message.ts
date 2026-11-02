@@ -1,10 +1,14 @@
 import { Component, computed, input, output, signal } from '@angular/core'
+import { form, FormField, required } from '@angular/forms/signals'
 import { MatIcon } from '@angular/material/icon'
 
 @Component({
     selector: 'app-message',
     standalone: true,
-    imports: [MatIcon],
+    imports: [
+        FormField,
+        MatIcon
+    ],
     templateUrl: './message.html',
     styleUrl: './message.scss',
     host: {
@@ -12,28 +16,31 @@ import { MatIcon } from '@angular/material/icon'
     },
 })
 export class Message {
-    readonly color = input<string>()
-    readonly onSubmit = output<string>()
+    public readonly color = input.required<string>()
+    public readonly onSubmit = output<string>()
 
-    readonly content = signal<string>('')
-    readonly disabled = computed(() => !this.isValid())
+    protected readonly disabled = computed(() => !this.isValid())
+    protected readonly form = form(signal({
+        message: ''
+    }), (schema) => {
+        required(schema.message)
+    })
 
-    onInput(event: Event): void {
-        const target = event.target as HTMLTextAreaElement
-        this.content.set(target.value)
-    }
-
-    submit(event: Event): void {
+    public submit(event: Event): void {
         event.preventDefault()
         if (!this.isValid()) {
             return
         }
-        this.onSubmit.emit(this.content().trim())
-        this.content.set('')
+        this.onSubmit.emit(this.form.message().value().trim())
+        this.reset()
     }
 
     private isValid(): boolean {
-        return this.content().trim().length > 0
+        return this.form().valid()
+    }
+
+    private reset(): void {
+        this.form().reset()
     }
 }
 

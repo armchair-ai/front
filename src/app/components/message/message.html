@@ -14,8 +14,7 @@
         desktop_windows
     </mat-icon>
     <textarea
-        [value]="content()"
-        (input)="onInput($event)"
+        [formField]="form.message"
     ></textarea>
     <button class="message-submit" type="submit" [disabled]="disabled()">
         Enviar
