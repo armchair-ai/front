@@ -1,5 +1,5 @@
 import { Component, computed, input, output, signal } from '@angular/core'
-import { FieldTree, form, FormField, FormRoot, required } from '@angular/forms/signals'
+import { disabled, FieldTree, form, FormField, FormRoot, required } from '@angular/forms/signals'
 import { MatIcon } from '@angular/material/icon'
 import { FormMessage } from '../../models/form-message'
 
@@ -24,13 +24,16 @@ export class Message {
     public readonly onSubmit = output<string>()
 
     protected readonly disabled = computed(() => {
-        return !this.isValid() || this.form().submitting()
+        return this.form().invalid() || this.form().disabled()
     })
 
     protected readonly form = form<FormMessage>(signal({
         message: ''
     }), (schemaPath) => {
         required(schemaPath.message)
+        disabled(schemaPath, {
+            when: ({ state }) => state.submitting(),
+        })
     }, {
         submission: {
             action: (form: FieldTree<FormMessage>) => this.handleSubmit(form)
@@ -40,10 +43,6 @@ export class Message {
     protected async handleSubmit(form: FieldTree<FormMessage>): Promise<void> {
         this.onSubmit.emit(form.message().value().trim())
         this.reset()
-    }
-
-    protected isValid(): boolean {
-        return this.form().valid()
     }
 
     protected reset(): void {
