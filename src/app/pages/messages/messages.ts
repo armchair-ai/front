@@ -8,6 +8,9 @@ import { Message } from '../../components/message/message'
     templateUrl: './messages.html',
     styleUrl: './messages.scss',
 })
-export class MessagesPage {
-}
 
+export class MessagesPage {
+    public onSubmit(message: string): void {
+        console.log(message)
+    }
+}
