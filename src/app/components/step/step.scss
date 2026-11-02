@@ -1,8 +1,9 @@
 :host {
-    display: grid;
     align-items: center;
-    width: 100%;
+    display: grid;
     grid-template-columns: var(--step-order-width) var(--step-icon-width) 1fr;
+    max-width: 768px;
+    width: 100%;
 
     app-step-order { 
         grid-column: 1;
