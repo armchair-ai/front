@@ -46,6 +46,8 @@ export class Message {
     }
 
     protected reset(): void {
-        this.form().reset()
+        this.form().reset({
+            message: ''
+        })
     }
 }
